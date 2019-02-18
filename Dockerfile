@@ -31,3 +31,8 @@ RUN cd /usr/local/bin/ \
 
 # Cleanup
 RUN apk del --purge .build-deps
+
+RUN mkdir /workspace
+COPY boot /usr/local/bin/
+COPY bootstrap /workspace/
+WORKDIR /workspace
